@@ -1,11 +1,6 @@
-# Very short description of the package
+# Summary
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/armcanada/laravel-honeypot.svg?style=flat-square)](https://packagist.org/packages/armcanada/laravel-honeypot)
-[![Build Status](https://img.shields.io/travis/armcanada/laravel-honeypot/master.svg?style=flat-square)](https://travis-ci.org/armcanada/laravel-honeypot)
-[![Quality Score](https://img.shields.io/scrutinizer/g/armcanada/laravel-honeypot.svg?style=flat-square)](https://scrutinizer-ci.com/g/armcanada/laravel-honeypot)
-[![Total Downloads](https://img.shields.io/packagist/dt/armcanada/laravel-honeypot.svg?style=flat-square)](https://packagist.org/packages/armcanada/laravel-honeypot)
-
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+Protects your Laravel application by the use of honeypot.
 
 ## Installation
 
@@ -17,8 +12,10 @@ composer require armcanada/laravel-honeypot
 
 ## Usage
 
+Use the provided middleware to enable honeypot verification like so:
+
 ``` php
-// Usage description here
+Route::post('/register', 'Auth\RegisterController@register')->middleware('verify-honeypot:field-name'); // Replace field name with your own provided input name
 ```
 
 ### Testing
